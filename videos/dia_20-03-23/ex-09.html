@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 09 </title>
+</head>
+
+<body>
+
+    <h3>Meta de economia</h3>
+
+    <p>Digite a sua meta de economia: <input id="ipt_metaEco"></p>
+
+    <p>Digite a quanto tempo tem guardado: <input id="ipt_qntd"> </p>
+
+    <button onclick="calcular()">Analisar economia</button>
+
+    <div id="div_resp"></div>
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        var metaEco = Number(ipt_metaEco.value);
+        var guardado = Number(ipt_qntd.value);
+
+        console.log(guardado, metaEco)
+
+        if (metaEco > guardado) {
+            div_resp.innerHTML = `Força! <br>Ainda em busca da meta! Falta R$ ${metaEco - guardado}`
+        }
+        else {
+            div_resp.innerHTML = `Parabéns, meta alcançada!`
+            if (guardado > metaEco) {
+                div_resp.innerHTML += `<br>Meta ultrapassada em R$ ${guardado - metaEco}`
+            }
+        }
+
+    }
+
+</script>
