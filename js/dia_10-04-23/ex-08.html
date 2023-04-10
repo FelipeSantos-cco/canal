@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 8</title>
+</head>
+
+<body>
+
+    <p>Quantas voltas o carro dará na corrida ? <input id="ipt_voltas"> </p>
+
+    <button onclick="iniciar()">Iniciar Corrida</button>
+
+    <div id="div_resp"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function iniciar() {
+        div_resp.innerHTML = "";
+
+        var voltas = Number(ipt_voltas.value);
+
+        for (var i = 1; i <= voltas; i++) {
+            div_resp.innerHTML += `<b>Carro dando a ${i}° volta</b><br>`;
+        }
+
+        div_resp.innerHTML += `Corrida finalizada!`;
+
+    }
+
+
+</script>
