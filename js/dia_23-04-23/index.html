@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de cálculo</title>
+</head>
+
+<body>
+
+    <h4>Calcule sua produtividade potencial com nosso sistema.</h4>
+
+    <p>Dentro do setor que mais tem funcionário</p>
+    <p>Digite as horas trabalhadas por dia: <input id="ipt_horasTrabalhadas"></p>
+    <p>Digite a média de horas extras: <input id="ipt_horasExtras"></p>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div id="div_resp"></div>
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        div_resp.innerHTML = "";
+
+        var horasTrab = ipt_horasTrabalhadas.value;
+        var horasExtr = ipt_horasExtras.value;
+
+        var prodPotencial = (horasTrab - horasExtr) / horasTrab;
+        var prctgSistema = (horasTrab - (horasExtr * 0.5)) / horasTrab;
+
+        div_resp.innerHTML += `Sua produtividade pontencial é de ${(prodPotencial * 100).toFixed(1)}%`;
+
+        div_resp.innerHTML += `<br>Usando nosso sistema, sua Produtividade Potencial pode chegar até ${(prctgSistema * 100).toFixed(1)}%`;
+
+        div_resp.innerHTML += `<br>Ou seja, um aumento de ${((prctgSistema - prodPotencial) * 100).toFixed(1)}% na Produtividade Potencial`;
+    }
+
+
+
+</script>
